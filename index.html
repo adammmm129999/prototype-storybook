@@ -71,13 +71,13 @@
     </header>
     <section class="hero" id="welcome" aria-labelledby="mainTitle">
       <div class="hero-copy"><div class="eyebrow">認知互動版 · 一起讀、一起想</div><h1 id="mainTitle">海龜波波的<br>海洋大冒險</h1><p>跟著小海龜波波潛進海底。看一看、想一想、說出你的發現，讓每個答案都變成故事裡的新風景。</p><button class="primary-btn" id="startBtn" type="button">開始冒險　→</button></div>
-      <div class="hero-art"><img src="assets/cover.jpg" alt="海龜波波和寄居蟹朋友在陽光灑落的海底。"><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span></div>
+      <div class="hero-art"><img src="cover.jpg" alt="海龜波波和寄居蟹朋友在陽光灑落的海底。"><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span></div>
     </section>
 
     <section class="reader" id="reader" aria-label="互動故事繪本">
       <article class="book-card">
         <div class="progress-row"><span id="chapterLabel">海底旅程</span><span id="pageCount">1 / 9</span></div><div class="progress-track" role="progressbar" aria-label="故事進度" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1"><div class="progress-fill" id="progressFill"></div></div>
-        <div class="book-pages"><div class="scene-wrap" id="sceneWrap"><img id="sceneImage" src="assets/cover.jpg" alt=""><div class="overlay" aria-hidden="true"><div class="rain" id="rain"></div><div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div><div class="ripple" id="ripple"></div><div class="color-wash" id="colorWash"></div><div class="metal-glint" id="metalGlint"></div><div class="answer-bubbles" id="answerBubbles"><i></i><i></i><i></i></div></div></div><section class="story-page" aria-label="本頁故事"><div class="story-content"><h2 class="scene-title" id="sceneTitle"></h2><div class="scene-copy" id="storyText" aria-live="polite"></div></div><div class="page-folio" id="pageFolio">波波的海底日記　·　01</div></section></div>
+        <div class="book-pages"><div class="scene-wrap" id="sceneWrap"><img id="sceneImage" src="cover.jpg" alt=""><div class="overlay" aria-hidden="true"><div class="rain" id="rain"></div><div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div><div class="ripple" id="ripple"></div><div class="color-wash" id="colorWash"></div><div class="metal-glint" id="metalGlint"></div><div class="answer-bubbles" id="answerBubbles"><i></i><i></i><i></i></div></div></div><section class="story-page" aria-label="本頁故事"><div class="story-content"><h2 class="scene-title" id="sceneTitle"></h2><div class="scene-copy" id="storyText" aria-live="polite"></div></div><div class="page-folio" id="pageFolio">波波的海底日記　·　01</div></section></div>
         <div class="book-controls"><button class="nav-btn" id="prevBtn" type="button">← 上一頁</button><div class="dots" id="dots" aria-label="故事頁次"></div><button class="nav-btn next" id="nextBtn" type="button">下一頁 →</button></div>
       </article>
       <aside class="coach-card" aria-label="分層認知提問">
@@ -104,15 +104,15 @@
   <div class="parent-modal" id="parentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><button class="close-modal" id="closeModal" type="button">關閉</button><h2 id="modalTitle">家長共讀指南</h2><p>這個故事把閱讀拆成「看見線索、理解原因、自由想像」三種聊天方式。請依孩子當下興趣選擇；可以只說一個詞，也可以完全跳過提問。</p><ul><li><b>看一看：</b>「你注意到什麼顏色／形狀？」等孩子先說，再把詞放回情境。</li><li><b>想原因：</b>「你覺得為什麼會這樣？接下來可能發生什麼？」接受多種合理想法。</li><li><b>想像力：</b>「如果你能替這片海加一種光或聲音，你會選什麼？」不糾正想像。</li><li><b>回應孩子：</b>先接住內容，例如「你看到黑黑的網了」，再補一段故事，最後只加一個選擇性的追問。</li><li>短詞、沉默、跳過都不是錯誤。這裡沒有評分、錄音或答案排名。</li></ul></div></div><div class="toast" id="toast" role="status"></div>
   <script>
     const chapters=[
-      {title:"出發吧，小海龜！",image:"assets/cover.jpg",cover:true,ask:true,text:"在廣闊湛藍的大海裡，住著一隻勇敢又好奇的小海龜，名叫波波。波波最喜歡跟著暖暖的洋流游泳，探索海底的各式花園。今天，波波準備沿著洋流回家，參加海龜家族的年度聚會。"},
-      {title:"奇怪的透明漂流物",image:"assets/scene-01.jpg",ask:false,text:"游著游著，波波肚子有點餓了。牠看見上方漂浮著許多半透明的「水母」，高興地張開嘴巴準備享用美食。可是靠近才發現，那些根本不是美味的水母，而是人類隨手丟棄的透明塑膠袋！這些塑膠袋漂在水裡，擋住了洋流的路。"},
-      {title:"岸邊傳來求救聲",image:"assets/scene-02.jpg",ask:true,text:"「小心！那個不能吃呀！」旁邊傳來細細的聲音。波波轉頭一看，是一隻名叫奇奇的小寄居蟹。奇奇背上的小房子不是美麗的貝殼，而是一個塑膠瓶蓋！奇奇無奈地說：「海底漂亮的貝殼越來越少，塑膠垃圾卻越來越多，我只能靠瓶蓋當家了。」"},
-      {title:"海灘上的塑膠山",image:"assets/scene-03.jpg",ask:false,text:"奇奇告訴波波，陸地上的人類買了太多一次性塑膠產品，用完就扔掉，許多垃圾就順著河流漂進了海洋。「你看，塑膠吸管、外帶飲料杯、還有塑膠套，把原本清澈的回家路線全給堵住了！」奇奇嘆了一口氣。"},
-      {title:"一起清出回家的路",image:"assets/scene-04.jpg",ask:true,text:"波波決定不放棄：「只要我們一起動手整理，把垃圾清理掉，就能辨認出正確的路，也能幫海洋生物找回乾淨的家！」波波用嘴輕輕咬起漂浮的塑膠吸管，奇奇則協助游到沙灘上的垃圾堆放到一邊，兩隻小夥伴展開了海洋大掃除。"},
-      {title:"漁網裡的求救者",image:"assets/scene-05.jpg",ask:false,text:"掃除過程中，波波發現前面有一張巨大的廢棄漁網，像怪物一樣死死纏住了狹窄的珊瑚礁通道，這是回家路上最大的障礙。波波小心翼翼地繞著廢漁網觀察，試著找出能安全通過的地方。"},
-      {title:"合作解開漁網",image:"assets/scene-06.jpg",ask:true,text:"奇奇靈巧地爬上網子，用堅硬的雙螯幫忙把網上的結綁緊。波波則用堅韌的身體推開漂浮的枝角與網線。經過兩個小夥伴的共同努力，廢棄漁網終於鬆開了一個缺口，安全的小道重新展現在他們面前！"},
-      {title:"重見陽光的海路",image:"assets/scene-07.jpg",ask:false,text:"移開了障礙物後，溫暖的洋流重新暢通無阻地流動起來。家鄉的陽光穿透湛藍的海水，照亮了一條佈滿發光海草的綠色小徑。「太棒了！這就是通往我家海灣的洋流小道！」波波開心地拍拍著鰭。"},
-      {title:"平安回到家",image:"assets/scene-08.jpg",ask:true,last:true,text:"波波回到了溫暖的家，向海龜家族講述這趟驚險又意義非凡的冒險。親愛的小朋友，你在陸地上的每一個環保選擇，都能成為保護海洋與海洋生物的重要力量喔！"}
+      {title:"出發吧，小海龜！",image:"cover.jpg",cover:true,ask:true,text:"在廣闊湛藍的大海裡，住著一隻勇敢又好奇的小海龜，名叫波波。波波最喜歡跟著暖暖的洋流游泳，探索海底的各式花園。今天，波波準備沿著洋流回家，參加海龜家族的年度聚會。"},
+      {title:"奇怪的透明漂流物",image:"scene-01.jpg",ask:false,text:"游著游著，波波肚子有點餓了。牠看見上方漂浮著許多半透明的「水母」，高興地張開嘴巴準備享用美食。可是靠近才發現，那些根本不是美味的水母，而是人類隨手丟棄的透明塑膠袋！這些塑膠袋漂在水裡，擋住了洋流的路。"},
+      {title:"岸邊傳來求救聲",image:"scene-02.jpg",ask:true,text:"「小心！那個不能吃呀！」旁邊傳來細細的聲音。波波轉頭一看，是一隻名叫奇奇的小寄居蟹。奇奇背上的小房子不是美麗的貝殼，而是一個塑膠瓶蓋！奇奇無奈地說：「海底漂亮的貝殼越來越少，塑膠垃圾卻越來越多，我只能靠瓶蓋當家了。」"},
+      {title:"海灘上的塑膠山",image:"scene-03.jpg",ask:false,text:"奇奇告訴波波，陸地上的人類買了太多一次性塑膠產品，用完就扔掉，許多垃圾就順著河流漂進了海洋。「你看，塑膠吸管、外帶飲料杯、還有塑膠套，把原本清澈的回家路線全給堵住了！」奇奇嘆了一口氣。"},
+      {title:"一起清出回家的路",image:"scene-04.jpg",ask:true,text:"波波決定不放棄：「只要我們一起動手整理，把垃圾清理掉，就能辨認出正確的路，也能幫海洋生物找回乾淨的家！」波波用嘴輕輕咬起漂浮的塑膠吸管，奇奇則協助游到沙灘上的垃圾堆放到一邊，兩隻小夥伴展開了海洋大掃除。"},
+      {title:"漁網裡的求救者",image:"scene-05.jpg",ask:false,text:"掃除過程中，波波發現前面有一張巨大的廢棄漁網，像怪物一樣死死纏住了狹窄的珊瑚礁通道，這是回家路上最大的障礙。波波小心翼翼地繞著廢漁網觀察，試著找出能安全通過的地方。"},
+      {title:"合作解開漁網",image:"scene-06.jpg",ask:true,text:"奇奇靈巧地爬上網子，用堅硬的雙螯幫忙把網上的結綁緊。波波則用堅韌的身體推開漂浮的枝角與網線。經過兩個小夥伴的共同努力，廢棄漁網終於鬆開了一個缺口，安全的小道重新展現在他們面前！"},
+      {title:"重見陽光的海路",image:"scene-07.jpg",ask:false,text:"移開了障礙物後，溫暖的洋流重新暢通無阻地流動起來。家鄉的陽光穿透湛藍的海水，照亮了一條佈滿發光海草的綠色小徑。「太棒了！這就是通往我家海灣的洋流小道！」波波開心地拍拍著鰭。"},
+      {title:"平安回到家",image:"scene-08.jpg",ask:true,last:true,text:"波波回到了溫暖的家，向海龜家族講述這趟驚險又意義非凡的冒險。親愛的小朋友，你在陸地上的每一個環保選擇，都能成為保護海洋與海洋生物的重要力量喔！"}
     ];
     const levels={low:{name:"低階｜外觀描述",caption:"觀察顏色、形狀、大小、觸感或聲音。說一個詞也很棒。",label:"看看畫面"},mid:{name:"中階｜因果推理",caption:"想一想原因、角色感受，或這件事接下來會怎樣。",label:"想想為什麼"},high:{name:"高階｜美感想像",caption:"自由想像海底的光、聲音、顏色與感覺，沒有標準答案。",label:"打開想像"}};
     const prompts={
