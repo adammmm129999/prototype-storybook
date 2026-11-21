@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#073f55">
+  <title>海龜波波的海洋大冒險｜認知互動版</title>
+  <style>
+    :root{--navy:#083f56;--deep:#062c40;--teal:#0a8090;--aqua:#d8f3ef;--cream:#fff8e9;--coral:#ff9277;--gold:#ffcf69;--ink:#153947;--muted:#55727a;--paper:#fffdf7;--shadow:0 18px 50px #06344a24;--round:24px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:ui-rounded,"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;background:radial-gradient(ellipse at 50% 5%,#d9f5f0 0,#eaf8f3 24%,#f8f5e9 68%,#fff8e9 100%);min-height:100vh}
+    button,input{font:inherit}button{cursor:pointer}.shell{max-width:1240px;margin:auto;padding:18px 24px 60px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;color:var(--navy);letter-spacing:.04em}.brand-mark{height:42px;width:42px;display:grid;place-items:center;background:#fff;border-radius:50%;box-shadow:var(--shadow);font-size:23px}.top-actions{display:flex;gap:8px;align-items:center}.quiet-btn,.round-btn{border:1px solid #b5d7d5;background:#ffffffb8;color:var(--navy);border-radius:999px;padding:10px 15px;font-weight:750}.quiet-btn:hover,.round-btn:hover{background:#fff;transform:translateY(-1px)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(300px,.94fr);overflow:hidden;border-radius:32px;background:var(--navy);color:white;box-shadow:var(--shadow);min-height:530px}.hero-copy{padding:clamp(28px,5vw,64px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:radial-gradient(circle at 15% 18%,#1f7990 0,transparent 44%),linear-gradient(140deg,#073d55,#075f71 65%,#0d7b81)}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:850;color:#a8e9dd}.hero h1{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(35px,5vw,62px);line-height:1.15;margin:15px 0}.hero p{font-size:17px;line-height:1.85;color:#d8f3ef;max-width:560px}.primary-btn{border:0;border-radius:999px;background:var(--gold);color:#3d351c;font-weight:900;padding:14px 23px;margin-top:14px;box-shadow:0 8px 0 #d79943;transition:.18s}.primary-btn:hover{transform:translateY(-2px);box-shadow:0 10px 0 #d79943}.hero-art{position:relative;min-height:380px;background:#7bd5d6;overflow:hidden}.hero-art img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center}.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#073f5633,transparent 35%);pointer-events:none}.bubble{position:absolute;border-radius:50%;border:1px solid #ffffff88;background:#ffffff27;animation:float 5s ease-in-out infinite;pointer-events:none}.bubble.b1{width:24px;height:24px;left:14%;top:20%}.bubble.b2{width:13px;height:13px;left:22%;top:68%;animation-delay:1s}.bubble.b3{width:36px;height:36px;right:8%;top:15%;animation-delay:2s}@keyframes float{50%{transform:translateY(-15px)}}
+    .reader{display:none;margin-top:26px;grid-template-columns:minmax(0,1.28fr) minmax(310px,.72fr);gap:20px;align-items:start}.reader.active{display:grid}.book-card,.coach-card{border-radius:var(--round);background:var(--paper);box-shadow:var(--shadow);border:1px solid #d7ece7;overflow:hidden}.book-card{position:relative}.progress-row{display:flex;align-items:center;justify-content:space-between;padding:17px 21px 12px;color:var(--muted);font-size:14px;font-weight:800}.progress-track{height:6px;background:#e1efeb;margin:0 21px 16px;border-radius:20px;overflow:hidden}.progress-fill{height:100%;background:linear-gradient(90deg,#30b9ae,#ffbd61);border-radius:20px;transition:width .35s}.scene-wrap{position:relative;min-height:320px;height:clamp(320px,42vw,510px);margin:0 18px;border-radius:18px;overflow:hidden;background:linear-gradient(145deg,#99ded9,#0a758e);isolation:isolate}.scene-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:filter .45s,transform .8s}.scene-wrap.image-cover img{object-position:center 43%}.scene-wrap:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#082f40aa);z-index:0;pointer-events:none}.scene-title{position:absolute;z-index:1;bottom:18px;left:22px;right:18px;color:#fff;text-shadow:0 2px 7px #002e3d;font-size:clamp(22px,3vw,32px);font-weight:900}.scene-copy{padding:20px 24px 7px;font-size:17px;line-height:1.95;min-height:126px}.story-end{color:#07858d;font-weight:800}.book-controls{display:flex;justify-content:space-between;gap:10px;padding:12px 20px 20px}.nav-btn{border:0;border-radius:14px;padding:12px 18px;font-weight:850;color:var(--navy);background:#e8f5f0}.nav-btn.next{background:var(--navy);color:white}.nav-btn:disabled{opacity:.4;cursor:not-allowed}.dots{display:flex;gap:7px;align-items:center;justify-content:center;flex:1}.dot{width:9px;height:9px;padding:0;border:0;border-radius:99px;background:#bedbd5}.dot.on{width:24px;background:#098b91}
+    .coach-card{padding:20px;position:sticky;top:14px}.coach-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.coach-head h2{margin:0;font-size:21px;color:var(--navy)}.coach-head p{margin:5px 0 14px;font-size:13px;color:var(--muted);line-height:1.6}.parent-tag{font-size:11px;background:#fff0d5;color:#805313;border-radius:99px;padding:6px 9px;white-space:nowrap;font-weight:850}.level-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;background:#edf5f0;border-radius:15px;padding:5px}.level-btn{border:0;border-radius:11px;background:transparent;padding:9px 4px;font-size:13px;font-weight:850;color:#58757a}.level-btn[aria-pressed=true]{color:white;background:var(--teal);box-shadow:0 4px 12px #0a809044}.level-caption{margin:10px 0 14px;color:var(--muted);font-size:12px;line-height:1.65;min-height:39px}.question-box{border-radius:18px;background:#f1f9f5;border:1px solid #d8ebe4;padding:16px}.question-label{font-size:11px;font-weight:900;letter-spacing:.08em;color:#14838a;text-transform:uppercase}.question{font-size:18px;font-weight:900;line-height:1.6;margin:7px 0 12px;color:#143c4b}.suggestions{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:11px}.suggestion{border:1px solid #bddbd4;background:#fff;color:#31565e;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:750}.answer-row{display:flex;gap:8px}.answer-row input{min-width:0;flex:1;border:1px solid #bcd8d2;border-radius:12px;padding:11px 12px;background:white;color:var(--ink);outline:none}.answer-row input:focus{border-color:#1599a0;box-shadow:0 0 0 3px #1599a022}.send-btn{border:0;border-radius:12px;padding:0 14px;background:var(--coral);color:#4a2a23;font-weight:900}.microw{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:11px;color:#6e8587}.voice-btn{border:0;background:transparent;color:var(--teal);font-weight:850;padding:5px}.feedback{margin-top:12px;min-height:54px;padding:12px;border-radius:13px;background:#fff7e8;color:#67491d;font-size:14px;line-height:1.65;display:none}.feedback.show{display:block;animation:pop .3s ease}.feedback strong{color:#7d5212}.followup{display:none;border-top:1px dashed #d8d4bd;margin-top:10px;padding-top:10px}.followup.show{display:block}.followup span{font-weight:900}.story-note{color:#728b8d;font-size:12px;margin:12px 2px 0;line-height:1.6}.skip-row{margin-top:10px;display:flex;justify-content:space-between;gap:8px}.text-btn{border:0;background:none;color:#53747a;text-decoration:underline;font-weight:750;font-size:12px;padding:5px 0}.empty-prompt{display:none;padding:17px;border-radius:16px;background:#f6f7ef;color:#5b777a;line-height:1.7;font-size:14px}.empty-prompt.show{display:block}
+    .specs{margin-top:25px;border:1px solid #cde5dd;border-radius:22px;background:#ffffffb8;box-shadow:0 8px 28px #06344a0d;overflow:hidden}.specs summary{list-style:none;cursor:pointer;padding:17px 20px;font-weight:900;color:var(--navy);display:flex;justify-content:space-between}.specs summary::-webkit-details-marker{display:none}.specs summary:after{content:"＋";color:#128b8d}.specs[open] summary:after{content:"－"}.spec-content{padding:0 20px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.spec-item{background:#f2f8f3;border-radius:16px;padding:15px}.spec-item h3{margin:0 0 7px;font-size:15px;color:#087581}.spec-item p,.spec-item li{font-size:13px;line-height:1.75;color:#4c696d}.spec-item ul{padding-left:18px;margin:5px 0}.logic{grid-column:1/-1;background:#fff4df}.logic code{font-family:inherit;background:#fff;border-radius:6px;padding:2px 6px;color:#805313}
+    .overlay{position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden}.rain{position:absolute;inset:-20%;opacity:0;background:repeating-linear-gradient(105deg,transparent 0 18px,#dffaffb0 19px 21px,transparent 22px 46px);transform:translateY(-25%)}.rain.active{opacity:.65;animation:rainfall 1s linear infinite}@keyframes rainfall{to{transform:translateY(24%)}}.sparkle{position:absolute;width:9px;height:9px;background:#fff5a8;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:0;filter:drop-shadow(0 0 6px #fff);animation:spark 1.2s ease-in-out 3}.sparkle.active{opacity:1}.sparkle:nth-child(2){left:21%;top:28%}.sparkle:nth-child(3){left:72%;top:35%;animation-delay:.15s}.sparkle:nth-child(4){left:49%;top:61%;animation-delay:.3s}@keyframes spark{50%{transform:scale(2.1) rotate(45deg);opacity:1}}.ripple{position:absolute;border:3px solid #e5fdff;border-radius:50%;width:26px;height:26px;left:48%;top:54%;opacity:0}.ripple.active{animation:ripple 1.7s ease-out 2}@keyframes ripple{0%{opacity:.9;transform:scale(.2)}100%{opacity:0;transform:scale(9)}}.scene-wrap.effect-rain img{filter:saturate(.86) brightness(.92)}.scene-wrap.effect-shine img{filter:saturate(1.12) brightness(1.06)}.scene-wrap.effect-water img{filter:saturate(1.18)}
+    .color-wash{position:absolute;inset:0;opacity:0;mix-blend-mode:soft-light}.color-wash.active{animation:colorBloom 3.2s ease forwards}@keyframes colorBloom{0%,100%{opacity:0}20%{opacity:.42}72%{opacity:.3}}
+    .metal-glint{position:absolute;inset:-10% auto 0 -55%;width:42%;height:120%;opacity:0;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,#ffffffdd 48%,#dffbff99 60%,transparent)}.metal-glint.active{animation:glintSweep 1.55s ease-in-out 2 forwards}@keyframes glintSweep{0%{left:-55%;opacity:0}25%{opacity:.8}100%{left:125%;opacity:0}}
+    .answer-bubbles{position:absolute;inset:0;opacity:0}.answer-bubbles i{position:absolute;bottom:8%;width:18px;height:18px;border:2px solid #e8ffffc9;border-radius:50%;background:#ccffff26;left:25%}.answer-bubbles i:nth-child(2){left:51%;width:12px;height:12px;animation-delay:.25s}.answer-bubbles i:nth-child(3){left:77%;width:23px;height:23px;animation-delay:.5s}.answer-bubbles.active{opacity:1}.answer-bubbles.active i{animation:bubbleRise 2.2s ease-out 1 forwards}@keyframes bubbleRise{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:.85}100%{transform:translateY(-310px) scale(1.3);opacity:0}}
+    .scene-wrap.effect-rain img{filter:saturate(.86) brightness(.92)}.scene-wrap.effect-shine img{filter:saturate(1.12) brightness(1.06)}.scene-wrap.effect-water img{filter:saturate(1.18)}
+    .reader.thinking .scene-wrap{animation:think .6s ease}@keyframes think{50%{transform:scale(1.006);box-shadow:0 0 0 5px #ffcf6977}}.parent-modal{position:fixed;inset:0;background:#052c3dcc;display:none;place-items:center;padding:20px;z-index:10}.parent-modal.open{display:grid}.modal-card{background:#fffdf7;border-radius:23px;padding:26px;max-width:600px;max-height:85vh;overflow:auto;box-shadow:0 25px 70px #00243566}.modal-card h2{margin-top:0;color:var(--navy)}.modal-card p,.modal-card li{line-height:1.85;color:#45646a}.close-modal{float:right;border:0;background:#eaf3ef;border-radius:99px;padding:8px 13px;color:#254e59;font-weight:900}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#073f56;color:white;padding:11px 17px;border-radius:999px;transition:.25s;z-index:11;font-weight:800}.toast.show{opacity:1;transform:translate(-50%,0)}footer{text-align:center;color:#668184;font-size:12px;padding:25px 12px 0;line-height:1.8}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    /* Printed-book spread: illustration on the left leaf, matching story on the right. */
+    .book-pages{display:grid;grid-template-columns:1fr 1fr;min-height:475px;margin:0 18px;border-radius:20px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 22px #113d4717,inset 0 0 0 1px #eadfc9;position:relative}
+    .scene-wrap{height:100%;min-height:475px;margin:0;border-radius:0;background:#d2eee8}
+    .scene-wrap:after{display:none}
+    .scene-title{position:static;z-index:auto;color:var(--navy);font-family:Georgia,"Noto Serif TC",serif;text-shadow:none;font-size:clamp(23px,2.4vw,32px);line-height:1.4;font-weight:900;margin:0 0 22px;padding:0}
+    .story-page{position:relative;display:flex;flex-direction:column;padding:clamp(25px,3.3vw,46px) clamp(23px,3vw,42px) 25px;background:linear-gradient(90deg,#f4eedf 0,#fffdf7 12px,#fffdf7 100%);border-left:1px solid #e9e1d1;min-width:0}
+    .story-page:before{content:"";position:absolute;left:-1px;top:0;bottom:0;width:16px;background:linear-gradient(90deg,#193f4014,transparent);pointer-events:none}
+    .scene-copy{padding:0 0 22px;min-height:0;font-family:Georgia,"Noto Serif TC","Microsoft JhengHei",serif;font-size:clamp(16px,1.45vw,19px);line-height:2.05;color:#294852;flex:1}
+    .page-folio{font-size:12px;letter-spacing:.12em;color:#8b9e96;text-align:right;border-top:1px solid #eee8da;padding-top:12px;margin-top:auto}
+    .book-controls{padding:16px 20px 20px}
+    @media(max-width:680px){.book-pages{grid-template-columns:1fr;margin:0 10px}.scene-wrap{height:72vw;min-height:260px;max-height:430px}.story-page{min-height:300px;padding:25px 23px 20px;border-left:0;border-top:1px solid #e9e1d1;background:linear-gradient(180deg,#f4eedf 0,#fffdf7 12px,#fffdf7 100%)}.story-page:before{left:0;right:0;top:-1px;bottom:auto;width:auto;height:14px;background:linear-gradient(180deg,#193f4014,transparent)}.scene-title{font-size:26px;margin-bottom:13px}.scene-copy{font-size:17px;line-height:1.9}}
+    @media(max-width:880px){.reader.active{grid-template-columns:1fr}.coach-card{position:static}.hero{grid-template-columns:1fr}.hero-art{min-height:340px;order:-1}.hero-copy{padding:30px}.spec-content{grid-template-columns:1fr 1fr}.logic{grid-column:1/-1}}
+    @media(max-width:560px){.shell{padding:12px 12px 40px}.topbar{margin-bottom:12px}.brand{font-size:14px}.brand-mark{width:36px;height:36px}.top-actions .quiet-btn{font-size:12px;padding:8px 10px}.hero{border-radius:23px;min-height:0}.hero-art{min-height:270px}.hero-copy{padding:25px 23px 30px}.hero p{font-size:15px}.reader.active{margin-top:15px}.scene-wrap{margin:0 10px;height:65vw;min-height:260px}.scene-copy{font-size:16px;padding:17px 17px 5px}.progress-row{padding:14px 15px 10px}.progress-track{margin:0 15px 13px}.book-controls{padding:10px 12px 14px}.nav-btn{padding:11px 13px}.coach-card{padding:16px}.spec-content{grid-template-columns:1fr}.logic{grid-column:auto}.specs summary{padding:15px}.answer-row input{font-size:16px}}
+    .shell{max-width:1680px;padding:14px 18px 42px}
+    .reader{margin-top:18px;grid-template-columns:minmax(0,1.95fr) minmax(330px,.68fr);gap:16px}
+    .book-pages{min-height:500px;margin:0 12px;border-radius:17px}
+    .scene-wrap{min-height:500px}
+    .progress-row{padding:13px 17px 9px}
+    .progress-track{margin:0 17px 12px}
+    .story-page{padding:clamp(24px,2.5vw,36px) clamp(23px,2.6vw,39px) 20px}
+    .scene-title{font-size:clamp(25px,2.1vw,34px);margin-bottom:16px}
+    .scene-copy{font-size:clamp(18px,1.45vw,22px);line-height:2.02}
+    .book-controls{padding:12px 16px 16px}
+    @media(max-width:880px){.reader{grid-template-columns:1fr}.coach-card{position:static}}
+    @media(max-width:680px){.book-pages{grid-template-columns:1fr;min-height:0;margin:0 10px}.scene-wrap{height:66vw;min-height:250px;max-height:400px}.story-page{min-height:280px;padding:25px 23px 20px;border-left:0;border-top:1px solid #e9e1d1;background:linear-gradient(180deg,#f4eedf 0,#fffdf7 12px,#fffdf7 100%)}.story-page:before{left:0;right:0;top:-1px;bottom:auto;width:auto;height:14px;background:linear-gradient(180deg,#193f4014,transparent)}.scene-title{font-size:26px;margin-bottom:13px}.scene-copy{font-size:17px;line-height:1.9}}
+    /* Let the open book use the available page area; the question card follows below it. */
+    .shell{width:calc(100% - 48px);max-width:1480px;margin:0 auto;padding:18px 0}
+    .reader{width:100%;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:12px}
+    .coach-card{position:static}
+    @media(min-width:681px){.book-pages{width:100%;height:clamp(300px,calc(100vh - 240px),760px);height:clamp(300px,calc(100dvh - 240px),760px);min-height:0;margin:0;border-radius:14px}.scene-wrap{height:100%;min-height:0}.story-page{height:100%}}
+    @media(max-width:680px){.book-pages{height:auto;min-height:0;margin:0 4px}.scene-wrap{height:66vw;min-height:250px;max-height:400px}.story-page{height:auto;min-height:280px}}
+    .hero-art img,.scene-wrap img{object-fit:contain}
+    .book-pages{height:auto;min-height:0;aspect-ratio:auto}
+    .scene-wrap{display:grid;place-items:center;height:auto;min-height:0;aspect-ratio:auto}
+    .scene-wrap:before{content:"";position:absolute;inset:-24px;background-image:var(--scene-image);background-size:cover;background-position:center;filter:blur(22px) saturate(.85) brightness(.96);transform:scale(1.06);opacity:.82;z-index:0}
+    .scene-wrap img{position:relative;z-index:1;width:auto;height:auto;max-width:92%;max-height:72vh;object-fit:contain}
+    .story-page{height:auto;min-height:0;justify-content:space-between}
+    .story-content{width:100%;max-width:560px;margin:0 auto;flex:1;display:flex;flex-direction:column;justify-content:center}
+    @media(max-width:680px){.book-pages{height:auto;min-height:0;aspect-ratio:auto}.scene-wrap{height:auto;min-height:0;max-height:none;aspect-ratio:auto}.scene-wrap img{max-width:92%;max-height:65vh}.story-page{height:auto;min-height:280px}.story-content{max-width:none;margin:0;flex:initial}}
+    @media(max-width:560px){.shell{width:calc(100% - 24px);padding:12px 0}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    .child-turn{display:flex;gap:10px;align-items:flex-start;margin:12px 0;padding:11px 13px;border-radius:14px;background:#e8f5f0;color:#31565e;font-size:12px;line-height:1.6}.child-turn>span:first-child{font-size:20px}.child-turn b{color:#087581}.repeat-btn{display:block;margin-top:10px;border:1px solid #bddbd4;border-radius:999px;background:#fff;color:#31565e;padding:8px 12px;font-size:12px;font-weight:800}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">🐢</span><span>波波的海洋小學堂</span></div>
+      <div class="top-actions"><button class="quiet-btn" id="parentOpen" type="button">家長共讀指南</button><button class="round-btn" id="audioToggle" type="button" aria-pressed="false">🔊 語音關閉</button></div>
+    </header>
+    <section class="hero" id="welcome" aria-labelledby="mainTitle">
+      <div class="hero-copy"><div class="eyebrow">認知互動版 · 一起讀、一起想</div><h1 id="mainTitle">海龜波波的<br>海洋大冒險</h1><p>跟著小海龜波波潛進海底。看一看、想一想、說出你的發現，讓每個答案都變成故事裡的新風景。</p><button class="primary-btn" id="startBtn" type="button">開始冒險　→</button></div>
+      <div class="hero-art"><img src="assets/cover.jpg" alt="海龜波波和寄居蟹朋友在陽光灑落的海底。"><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span></div>
+    </section>
+
+    <section class="reader" id="reader" aria-label="互動故事繪本">
+      <article class="book-card">
+        <div class="progress-row"><span id="chapterLabel">海底旅程</span><span id="pageCount">1 / 9</span></div><div class="progress-track" role="progressbar" aria-label="故事進度" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="book-pages"><div class="scene-wrap" id="sceneWrap"><img id="sceneImage" src="assets/cover.jpg" alt=""><div class="overlay" aria-hidden="true"><div class="rain" id="rain"></div><div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div><div class="ripple" id="ripple"></div><div class="color-wash" id="colorWash"></div><div class="metal-glint" id="metalGlint"></div><div class="answer-bubbles" id="answerBubbles"><i></i><i></i><i></i></div></div></div><section class="story-page" aria-label="本頁故事"><div class="story-content"><h2 class="scene-title" id="sceneTitle"></h2><div class="scene-copy" id="storyText" aria-live="polite"></div></div><div class="page-folio" id="pageFolio">波波的海底日記　·　01</div></section></div>
+        <div class="book-controls"><button class="nav-btn" id="prevBtn" type="button">← 上一頁</button><div class="dots" id="dots" aria-label="故事頁次"></div><button class="nav-btn next" id="nextBtn" type="button">下一頁 →</button></div>
+      </article>
+      <aside class="coach-card" aria-label="分層認知提問">
+        <div class="coach-head"><div><h2>換你當海洋小偵探</h2><p>先把裝置交給小朋友，讓孩子自己選、自己說；家長可以先等一等。</p></div><span class="parent-tag">孩子先來</span></div>
+        <div class="child-turn" role="note"><span aria-hidden="true">🐢</span><span><b>波波的小約定</b>：沒有標準答案。可以說一個詞、自己打字，或按「先繼續故事」。大人先聽孩子說完，再一起聊。</span></div>
+        <div class="level-tabs" role="group" aria-label="選擇提問難度"><button class="level-btn" data-level="low" aria-pressed="true" type="button">👀 看一看</button><button class="level-btn" data-level="mid" aria-pressed="false" type="button">🔎 想原因</button><button class="level-btn" data-level="high" aria-pressed="false" type="button">✨ 想像力</button></div>
+        <div class="level-caption" id="levelCaption">觀察顏色、形狀、大小、觸感或聲音。說一個詞也很棒。</div>
+        <div id="questionArea" class="question-box"><div class="question-label" id="questionLabel">看看畫面</div><div class="question" id="questionText"></div><div class="suggestions" id="suggestions"></div><form class="answer-row" id="answerForm"><label class="sr-only" for="answerInput">說說你的想法</label><input id="answerInput" autocomplete="off" placeholder="說一個詞也可以…" maxlength="180"><button class="send-btn" type="submit">送出</button></form><div class="microw"><span>孩子可以自己打字或口頭回答；需要時家長再協助輸入</span><button class="voice-btn" id="speakStory" type="button">▶ 聽故事</button></div><div class="feedback" id="feedback" aria-live="polite"><div id="feedbackMain"></div><div class="followup" id="followup"><span>再想一小步：</span><span id="followupText"></span><button class="repeat-btn" id="repeatBtn" onclick="startRepeat()" type="button">🔁 我想用自己的話再說一次</button></div></div></div>
+        <div class="empty-prompt" id="emptyPrompt">這一頁先陪波波看看海底。準備好後，翻頁看看會遇見什麼吧！</div>
+        <div class="skip-row"><span class="story-note" id="promptNote">提問只在適合停下來觀察的故事節點出現。</span><button class="text-btn" id="skipQuestion" type="button">先繼續聽故事</button></div>
+      </aside>
+    </section>
+
+    <details class="specs" id="designSpecs"><summary>互動設計與 UI 元件規格</summary><div class="spec-content">
+      <section class="spec-item"><h3>低階｜外觀描述</h3><p>目標是命名可直接觀察的線索，不要求完整句。</p><ul><li>提示：顏色、形狀、大小、觸感、明暗或透明度</li><li>例：「你看到什麼顏色？」</li><li>回應：肯定原詞，接上當頁的場景與焦點</li></ul></section>
+      <section class="spec-item"><h3>中階｜因果推理</h3><p>從「看見什麼」走向「為什麼、接下來會怎樣」。</p><ul><li>提示：原因、結果、角色感受、解決方法</li><li>例：「塑膠袋卡住螃蟹，牠可能會怎麼辦？」</li><li>回應：肯定推理，延伸行動與後果</li></ul></section>
+      <section class="spec-item"><h3>高階｜美感想像</h3><p>鼓勵個人聯想、感官語言與創作，不評分對錯。</p><ul><li>提示：如果你在海底、想為畫面加聲音或顏色</li><li>例：「你會替這片海加上什麼光？」</li><li>回應：把孩子想像轉成畫面描述</li></ul></section>
+      <section class="spec-item logic"><h3>回答延伸規則｜短詞也能接住</h3><p><code>辨認詞語類型 → 讀取當頁場景 → 正向肯定 → 故事擴句 → 短暫視覺回饋</code></p><ul><li>「冰冰的」→把詞放進當頁海流情境，描述波波感受到涼涼水流；畫面出現冷色水波。</li><li>「黑色的」→連到當頁焦點；第三頁塑膠瓶蓋呈現柔和水光，只有漁網頁才使用銀白金屬反光。</li><li>「綠綠的」→加入海草或珊瑚的顏色，畫面暫時泛綠光；「圓圓的／小小的」→增加上升泡泡；「濕濕的」→依當頁情節呈現潮水水痕或雨滴，不把下雨套到無雨場景。</li><li>不認得的詞也會被肯定，並放回當頁情境當成新線索；每次只加一個可選追問。效果短暫、非獎懲、不遮住故事。</li></ul></section>
+      <section class="spec-item"><h3>主要 UI 元件</h3><ul><li>繪本舞台：插圖、章節標題、文字、頁碼與進度條</li><li>難度切換：三個常駐按鈕，家長可隨時切換</li><li>提問卡：一題、可選提示詞、文字輸入、語音朗讀</li><li>回饋區：肯定、故事延伸、可選追問、動態特效</li><li>導航：上一頁、下一頁、章節點點</li></ul></section>
+      <section class="spec-item"><h3>節奏與照顧者支援</h3><ul><li>只在 1、3、5、7、9 章設置停頓提問，避免每頁打斷閱讀</li><li>孩子可跳過、口答或由家長代輸入；不顯示分數</li><li>語音朗讀由家長手動開啟，預設關閉</li><li>支援手機版、鍵盤操作與減少動態效果偏好</li></ul></section>
+    </div></details>
+    <footer>故事文字依 PDF 內容重整；原 PDF 的插圖作為頁面場景素材。<br>此原型在瀏覽器本機執行，回答只用來產生當頁回饋，不會傳送或儲存。</footer>
+  </main>
+  <div class="parent-modal" id="parentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><button class="close-modal" id="closeModal" type="button">關閉</button><h2 id="modalTitle">家長共讀指南</h2><p>這個故事把閱讀拆成「看見線索、理解原因、自由想像」三種聊天方式。請依孩子當下興趣選擇；可以只說一個詞，也可以完全跳過提問。</p><ul><li><b>看一看：</b>「你注意到什麼顏色／形狀？」等孩子先說，再把詞放回情境。</li><li><b>想原因：</b>「你覺得為什麼會這樣？接下來可能發生什麼？」接受多種合理想法。</li><li><b>想像力：</b>「如果你能替這片海加一種光或聲音，你會選什麼？」不糾正想像。</li><li><b>回應孩子：</b>先接住內容，例如「你看到黑黑的網了」，再補一段故事，最後只加一個選擇性的追問。</li><li>短詞、沉默、跳過都不是錯誤。這裡沒有評分、錄音或答案排名。</li></ul></div></div><div class="toast" id="toast" role="status"></div>
+  <script>
+    const chapters=[
+      {title:"出發吧，小海龜！",image:"assets/cover.jpg",cover:true,ask:true,text:"在廣闊湛藍的大海裡，住著一隻勇敢又好奇的小海龜，名叫波波。波波最喜歡跟著暖暖的洋流游泳，探索海底的各式花園。今天，波波準備沿著洋流回家，參加海龜家族的年度聚會。"},
+      {title:"奇怪的透明漂流物",image:"assets/scene-01.jpg",ask:false,text:"游著游著，波波肚子有點餓了。牠看見上方漂浮著許多半透明的「水母」，高興地張開嘴巴準備享用美食。可是靠近才發現，那些根本不是美味的水母，而是人類隨手丟棄的透明塑膠袋！這些塑膠袋漂在水裡，擋住了洋流的路。"},
+      {title:"岸邊傳來求救聲",image:"assets/scene-02.jpg",ask:true,text:"「小心！那個不能吃呀！」旁邊傳來細細的聲音。波波轉頭一看，是一隻名叫奇奇的小寄居蟹。奇奇背上的小房子不是美麗的貝殼，而是一個塑膠瓶蓋！奇奇無奈地說：「海底漂亮的貝殼越來越少，塑膠垃圾卻越來越多，我只能靠瓶蓋當家了。」"},
+      {title:"海灘上的塑膠山",image:"assets/scene-03.jpg",ask:false,text:"奇奇告訴波波，陸地上的人類買了太多一次性塑膠產品，用完就扔掉，許多垃圾就順著河流漂進了海洋。「你看，塑膠吸管、外帶飲料杯、還有塑膠套，把原本清澈的回家路線全給堵住了！」奇奇嘆了一口氣。"},
+      {title:"一起清出回家的路",image:"assets/scene-04.jpg",ask:true,text:"波波決定不放棄：「只要我們一起動手整理，把垃圾清理掉，就能辨認出正確的路，也能幫海洋生物找回乾淨的家！」波波用嘴輕輕咬起漂浮的塑膠吸管，奇奇則協助游到沙灘上的垃圾堆放到一邊，兩隻小夥伴展開了海洋大掃除。"},
+      {title:"漁網裡的求救者",image:"assets/scene-05.jpg",ask:false,text:"掃除過程中，波波發現前面有一張巨大的廢棄漁網，像怪物一樣死死纏住了狹窄的珊瑚礁通道，這是回家路上最大的障礙。波波小心翼翼地繞著廢漁網觀察，試著找出能安全通過的地方。"},
+      {title:"合作解開漁網",image:"assets/scene-06.jpg",ask:true,text:"奇奇靈巧地爬上網子，用堅硬的雙螯幫忙把網上的結綁緊。波波則用堅韌的身體推開漂浮的枝角與網線。經過兩個小夥伴的共同努力，廢棄漁網終於鬆開了一個缺口，安全的小道重新展現在他們面前！"},
+      {title:"重見陽光的海路",image:"assets/scene-07.jpg",ask:false,text:"移開了障礙物後，溫暖的洋流重新暢通無阻地流動起來。家鄉的陽光穿透湛藍的海水，照亮了一條佈滿發光海草的綠色小徑。「太棒了！這就是通往我家海灣的洋流小道！」波波開心地拍拍著鰭。"},
+      {title:"平安回到家",image:"assets/scene-08.jpg",ask:true,last:true,text:"波波回到了溫暖的家，向海龜家族講述這趟驚險又意義非凡的冒險。親愛的小朋友，你在陸地上的每一個環保選擇，都能成為保護海洋與海洋生物的重要力量喔！"}
+    ];
+    const levels={low:{name:"低階｜外觀描述",caption:"觀察顏色、形狀、大小、觸感或聲音。說一個詞也很棒。",label:"看看畫面"},mid:{name:"中階｜因果推理",caption:"想一想原因、角色感受，或這件事接下來會怎樣。",label:"想想為什麼"},high:{name:"高階｜美感想像",caption:"自由想像海底的光、聲音、顏色與感覺，沒有標準答案。",label:"打開想像"}};
+    const prompts={
+      0:{low:"波波身上有哪些顏色或形狀？你最先注意到哪裡？",mid:"你猜波波為什麼喜歡跟著暖暖的洋流游泳？",high:"如果你也游進這片海，想讓海底多一種什麼顏色或聲音？"},
+      2:{low:"奇奇背上的瓶蓋看起來是什麼顏色、形狀？你覺得摸起來會是什麼感覺？",mid:"你覺得奇奇為什麼會用瓶蓋當家？牠可能有什麼感覺？",high:"如果你能替奇奇設計一個安全又漂亮的新家，你會用什麼顏色、形狀或材料？"},
+      4:{low:"畫面裡有哪些工具或垃圾？挑一樣說說它的樣子。",mid:"波波和奇奇分工整理，這樣做有什麼幫助？",high:"如果海底恢復乾淨，你想像珊瑚旁會出現什麼新景色？"},
+      6:{low:"你看到網子旁邊有哪些顏色或形狀？",mid:"波波和奇奇怎麼合作，才讓大家安全通過？",high:"你會替這條重現的海底小徑加上什麼光影或聲音？"},
+      8:{low:"最後這片海看起來和冒險開始時有什麼不同？",mid:"一個小小的環保選擇，怎麼幫助到海洋動物？",high:"如果你要為波波的旅程畫最後一幕，會讓天空、海水和音樂是什麼樣子？"}
+    };
+    const chips={low:["綠綠的","冰冰的","亮亮的"],mid:["因為有垃圾","牠需要幫忙","一起合作"],high:["閃閃的陽光","涼涼的水流","像童話一樣"]};
+    const pageChips={2:{low:["硬硬的","亮亮的","藍色的"],mid:["貝殼變少了","奇奇可能很難過","一起找新家"],high:["圓圓的貝殼屋","海草做的房間","會發光的小屋"]}};
+    const lowScenes=[
+      {scene:"陽光灑進海面，波波和奇奇在海草間游過。",focus:"波波的龜殼和身旁的海草"},
+      {scene:"漂浮的塑膠袋在水裡飄動，波波停下來仔細觀察。",focus:"水中的塑膠袋和水母"},
+      {scene:"奇奇背著瓶蓋小屋，站在沙灘邊看向海底。",focus:"奇奇背上的瓶蓋和沙灘"},
+      {scene:"吸管、飲料杯和塑膠包裝散落在回家的路上。",focus:"海底的垃圾和珊瑚"},
+      {scene:"波波與奇奇一起把塑膠垃圾收拾到一旁。",focus:"波波和奇奇手邊的塑膠垃圾"},
+      {scene:"廢棄漁網纏在珊瑚礁通道旁，波波停下來觀察。",focus:"漁網和珊瑚礁"},
+      {scene:"奇奇鬆開網結，波波小心地推開纏住的網線。",focus:"鬆開的網結和波波的鰭"},
+      {scene:"暖暖陽光照亮海草小徑，波波沿著海流前進。",focus:"海草小徑和清澈的海流"},
+      {scene:"波波回到家，和海龜家族分享一路上的發現。",focus:"波波和等候牠的海龜家人"}
+    ];
+    let page=0,level="low",voiceOn=false,toastTimer,effectTimer;
+    const $=s=>document.querySelector(s),reader=$("#reader"),sceneWrap=$("#sceneWrap"),input=$("#answerInput");
+    function promptIndex(){return prompts[page]?page:null}
+    function render(){const c=chapters[page];$("#chapterLabel").textContent=c.title;$("#pageCount").textContent=`${page+1} / ${chapters.length}`;$("#pageFolio").textContent=`波波的海底日記　·　${String(page+1).padStart(2,"0")}`;$(".progress-track").setAttribute("aria-valuenow",page+1);$("#progressFill").style.width=`${(page+1)/chapters.length*100}%`;sceneWrap.style.setProperty("--scene-image",`url("${c.image}")`);$("#sceneImage").src=c.image;$("#sceneImage").alt=c.cover?"海龜波波和朋友在海底相遇":"海龜波波的故事場景："+c.title;sceneWrap.classList.toggle("image-cover",!!c.cover);$("#sceneTitle").textContent=c.title;$("#storyText").innerHTML=c.last?`${c.text}<br><span class="story-end">🌱 你也能成為海洋守護小尖兵！</span>`:c.text;$("#prevBtn").disabled=page===0;$("#nextBtn").textContent=c.last?"再讀一次 ↻":"下一頁 →";const pi=promptIndex();$("#questionArea").style.display=pi===null?"none":"block";$("#emptyPrompt").classList.toggle("show",pi===null);$("#skipQuestion").style.display=pi===null?"none":"inline";$("#promptNote").textContent=pi===null?"故事會在重要情節停下來聊一聊。":"提問只在適合停下來觀察的故事節點出現。";clearFeedback();drawQuestion();drawDots();if(voiceOn)speak(c.text)}
+    function drawQuestion(){const p=prompts[promptIndex()];if(!p)return;$("#levelCaption").textContent=levels[level].caption;$("#questionLabel").textContent=levels[level].label;$("#questionText").textContent=p[level];$("#suggestions").innerHTML="";(pageChips[page]?.[level]||chips[level]).forEach(t=>{const b=document.createElement("button");b.type="button";b.className="suggestion";b.textContent=t;b.addEventListener("click",()=>respond(t));$("#suggestions").append(b)});document.querySelectorAll(".level-btn").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.level===level)))}
+    function drawDots(){const box=$("#dots");box.innerHTML="";chapters.forEach((c,i)=>{const b=document.createElement("button");b.className="dot"+(i===page?" on":"");b.type="button";b.setAttribute("aria-label",`前往第 ${i+1} 章：${c.title}`);b.addEventListener("click",()=>{page=i;render()});box.append(b)})}
+    function resetEffect(){clearTimeout(effectTimer);sceneWrap.classList.remove("effect-rain","effect-shine","effect-water","effect-metal");$("#rain").classList.remove("active");$("#ripple").classList.remove("active");$("#answerBubbles").classList.remove("active");$("#colorWash").classList.remove("active");$("#colorWash").style.backgroundColor="transparent";$("#metalGlint").classList.remove("active");document.querySelectorAll(".sparkle").forEach(x=>x.classList.remove("active"))}
+    function clearFeedback(){const f=$("#feedback");f.classList.remove("show");$("#followup").classList.remove("show");$("#answerInput").value="";resetEffect()}
+    function effect(type,color="transparent"){resetEffect();if(type==="rain"){sceneWrap.classList.add("effect-rain");$("#rain").classList.add("active")}if(type==="shine"){sceneWrap.classList.add("effect-shine");document.querySelectorAll(".sparkle").forEach(x=>x.classList.add("active"))}if(type==="water"){sceneWrap.classList.add("effect-water");$("#ripple").classList.add("active")}if(type==="bubbles"){$("#answerBubbles").classList.add("active")}if(type==="metal"){sceneWrap.classList.add("effect-metal");$("#metalGlint").classList.add("active")}if(color!=="transparent"){$("#colorWash").style.backgroundColor=color;$("#colorWash").classList.add("active")}effectTimer=setTimeout(resetEffect,3600)}
+    function lowResponse(word){
+      const w=word.toLowerCase(),c=lowScenes[page]||lowScenes[0];
+      let praise=`你注意到「${word}」了，觀察得真仔細！`,extension="",follow="你還注意到畫面裡的哪個小地方？",fx="water",tint="transparent";
+      const colorMatch=w.match(/紅|橘|黃|綠|藍|紫|粉|白|黑/);
+      const palette={紅:"#ff7167",橘:"#ff9e52",黃:"#ffdc57",綠:"#58c88b",藍:"#54bfe8",紫:"#b18de9",粉:"#f49bc6",白:"#ffffff",黑:"#193d4b"};
+      if(/冰|冷|涼/.test(w)){
+        praise=`你感覺到「${word}」了，這個觀察很細心！`;
+        extension=page===2?`${c.scene}帶著涼意的海水輕輕拍上沙灘，波波停下來陪奇奇看看瓶蓋小屋。`:`${c.scene}波波感覺到冰冰的海水輕輕流過鰭邊，放慢速度，沿著涼涼的水流前進。`;
+        follow="你猜這裡的水，摸起來會一直這麼冰嗎？";fx="water";tint="#78d7ed";
+      }else if(/暖|溫暖|熱/.test(w)){
+        praise=`你發現「${word}」的溫度感覺了！`;
+        extension=`${c.scene}一股暖暖的海流從波波身邊流過，牠舒服地伸展鰭，繼續往前游。`;
+        follow="你覺得暖暖的海流會把波波帶去哪裡？";fx="shine";tint="#ffd36c";
+      }else if(/濕|雨|水滴/.test(w)){
+        praise=`你把「${word}」的感覺說出來了，真棒！`;
+        extension=page===2?`${c.scene}海水輕輕拍上沙灘，潮濕的沙地留下薄薄水痕，映出小小的光點。`:`${c.scene}海面落下細細的雨，雨滴在水上畫出一圈圈波紋，海底的光影也跟著搖晃。`;
+        follow=page===2?"你覺得潮水退去後，沙灘會留下什麼？":"雨停後，你想像海面會留下什麼？";fx=page===2?"water":"rain";
+      }else if(/亮|閃|光|透明|透透|反光/.test(w)){
+        praise=`你發現「${word}」的細節了！`;
+        extension=page===2?`${c.scene}一束陽光落在瓶蓋邊緣，像小星星一樣閃了一下，波波和奇奇一起看著。`:`${c.scene}一束光落在${c.focus}上，邊緣亮起點點反光，像海底的小星星。`;
+        follow=page===2?"你覺得這束陽光照在瓶蓋的哪個位置？":"如果這道光有顏色，你想讓它變成什麼色？";fx="shine";tint="#fff0a8";
+      }else if(/黑|暗/.test(w)){
+        praise=`你發現「${word}」的深淺變化了，眼睛真敏銳！`;
+        const isNetPage=page===5||page===6;
+        const glint=page===2?"瓶蓋的暗色邊緣映著柔和水光，波波靠近仔細看了看。":isNetPage?"黑色漁網的邊緣掠過一抹銀光，波波看見網結正在輕輕晃動。":`暗色水影掠過${c.focus}，一點柔光在水中閃了一下。`;
+        extension=`${c.scene}${glint}`;follow=page===2?"你覺得瓶蓋邊緣的水光是從哪裡來的？":"你看到的光是從哪個方向照過來的？";fx=isNetPage?"metal":"shine";tint=page===2?"#c8f1f5":"#d9eef4";
+      }else if(colorMatch){
+        const color=colorMatch[0],tone={紅:"紅色",橘:"橘色",黃:"黃色",綠:"綠色",藍:"藍色",紫:"紫色",粉:"粉色",白:"白色",黑:"黑色"}[color];praise=`你注意到「${word}」這個顏色了，好細心！`;
+        extension=page===2?`${c.scene}${tone}的海水映在奇奇背上的瓶蓋邊緣，讓那個小小的家多了一層柔和色彩。`:`${c.scene}${tone}的光映在${c.focus}上，整個海底像多了一筆新的顏色。`;
+        follow="你還想替這幅海底畫加上什麼顏色？";fx="shine";tint=palette[color];
+      }else if(/圓|球|小小|小的|大大|大的|長長|彎彎|尖尖|扁/.test(w)){
+        praise=`你看出「${word}」的形狀或大小了，眼睛真敏銳！`;
+        const detail=page===2?(/圓|球/.test(w)?"瓶蓋邊緣是圓圓的":/扁/.test(w)?"瓶蓋扁扁地貼在奇奇背上":/長/.test(w)?"旁邊有一段長長的塑膠條":/彎/.test(w)?"奇奇的觸角彎彎地探出來":/尖/.test(w)?"附近的珊瑚尖尖的":/大/.test(w)?"瓶蓋比奇奇的身體大一些":/小/.test(w)?"瓶蓋小小的，剛好罩住奇奇":"瓶蓋的邊緣圓圓的"):/長/.test(w)?"一株長長的海草":/彎/.test(w)?"一株彎彎的海草":/尖/.test(w)?"幾根尖尖的珊瑚":/大/.test(w)?"一顆大大的泡泡":/小/.test(w)?"一顆小小的泡泡":"一顆圓圓的泡泡";
+        extension=page===2?`${c.scene}波波仔細觀察：${detail}，瓶蓋邊緣還映出一點海光。`:`${c.scene}波波在${c.focus}旁邊發現${detail}，停下來仔細看了看。`;
+        follow=page===2?"你覺得這個瓶蓋適合當奇奇的家嗎？":"你還看到哪裡有相似的形狀？";fx=page===2?"shine":/泡泡/.test(detail)?"bubbles":"water";tint="#bcefff";
+      }else if(/滑|軟|硬|粗|刺|黏/.test(w)){
+        praise=`你留意到「${word}」的觸感了，真會觀察！`;
+        const feel=word.replace(/的+$/g,"");
+        extension=page===2?`${c.scene}波波看著奇奇背上的瓶蓋，想像它摸起來一定${feel}的吧。`:`${c.scene}波波停下來仔細看看${c.focus}，想像摸起來一定${feel}的吧，再小心地游過去。`;
+        follow="你覺得波波會用什麼方式安全地靠近？";fx="water";
+      }else{
+        extension=`${c.scene}波波也聽見你說「${word}」，牠把這個發現當成新的線索，停下來多看了一眼。`;
+        follow="你想指給波波看，這個線索在哪裡嗎？";fx="water";
+      }
+      return {praise,extension,follow,fx,tint};
+    }
+    function respond(raw){
+      const word=raw.trim();if(!word)return;
+      let result;
+      if(level==="low")result=lowResponse(word);
+      else if(level==="mid")result={praise:"你正在替故事找線索，想得很認真！",extension:`波波聽見你的想法：「${word}。」牠和奇奇一起看看周圍，試著找出可以讓海洋更安全的方法。`,follow:"如果這樣做了，接下來可能會發生什麼？",fx:"water"};
+      else result=highResponse(word);
+      if(repeating){repeating=false;input.placeholder="說一個詞也可以…";$("#feedbackMain").innerHTML=`<strong>謝謝你用自己的話再說一次！</strong><br>波波聽見你的版本：「${escapeHtml(word)}。」這就是你的故事想法。`;$("#followup").classList.remove("show");input.value="";return;}
+      const {praise,extension,follow,fx,tint}=result;
+      $("#feedbackMain").innerHTML=`<strong>${escapeHtml(praise)}</strong><br>${escapeHtml(extension)}`;$("#followupText").textContent=follow;$("#feedback").classList.add("show");$("#followup").classList.add("show");input.value="";reader.classList.add("thinking");setTimeout(()=>reader.classList.remove("thinking"),650);effect(fx,tint);if(voiceOn)speak(praise+extension);
+    }
+    function highResponse(word){const c=lowScenes[page]||lowScenes[0];const praise=`你替故事加進「${word}」這個想法，真有創意！`;const extension=page===2?`波波把「${word}」記下來，和奇奇一起想像一間安全的新家。瓶蓋旁彷彿長出你設計的海底小屋，等著奇奇挑選。`:`波波把「${word}」放進${c.focus}的畫面裡，海底冒險因此多了一個只屬於你的新景色。`;const follow=page===2?"你想替新家選什麼顏色、形狀，或一種安全的材料？":"如果把你的想法畫進這一頁，你會先加上什麼顏色、形狀或聲音？";return {praise,extension,follow,fx:"shine",tint:"#fff0a8"}}
+    let repeating=false;function startRepeat(){repeating=true;input.placeholder="換你用自己的話說說看…";input.value="";input.focus();showToast("可以照自己的方式說，不用一字不漏！")}
+    function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+    function speak(text){if(!('speechSynthesis'in window)){showToast("這個瀏覽器目前不支援語音朗讀");return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="zh-TW";u.rate=.92;speechSynthesis.speak(u)}
+    function showToast(t){const el=$("#toast");el.textContent=t;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("show"),2400)}
+    $("#startBtn").addEventListener("click",()=>{reader.classList.add("active");$("#welcome").style.display="none";page=0;render();reader.scrollIntoView({behavior:"smooth",block:"start"})});$("#prevBtn").addEventListener("click",()=>{if(page>0){page--;render()}});$("#nextBtn").addEventListener("click",()=>{if(page===chapters.length-1){page=0;render()}else{page++;render()}});document.querySelectorAll(".level-btn").forEach(b=>b.addEventListener("click",()=>{level=b.dataset.level;drawQuestion();clearFeedback()}));$("#answerForm").addEventListener("submit",e=>{e.preventDefault();respond(input.value)});$("#skipQuestion").addEventListener("click",()=>{$("#emptyPrompt").classList.add("show");$("#questionArea").style.display="none";showToast("好呀，我們繼續陪波波冒險！")});$("#speakStory").addEventListener("click",()=>speak(chapters[page].text));$("#audioToggle").addEventListener("click",e=>{voiceOn=!voiceOn;e.currentTarget.setAttribute("aria-pressed",String(voiceOn));e.currentTarget.textContent=voiceOn?"🔊 語音開啟":"🔊 語音關閉";if(!voiceOn&&'speechSynthesis'in window)speechSynthesis.cancel();showToast(voiceOn?"翻頁時會朗讀故事文字":"已關閉自動朗讀")});$("#parentOpen").addEventListener("click",()=>$("#parentModal").classList.add("open"));$("#closeModal").addEventListener("click",()=>$("#parentModal").classList.remove("open"));$("#parentModal").addEventListener("click",e=>{if(e.target.id==="parentModal")e.currentTarget.classList.remove("open")});document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#parentModal").classList.remove("open")});
+  </script>
+</body>
+</html>
